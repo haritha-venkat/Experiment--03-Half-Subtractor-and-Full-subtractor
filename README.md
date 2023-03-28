@@ -1,4 +1,4 @@
-# Experiment--03-Half-Subtractor-and-Full-subtractor
+# Experiment--04-Half-Subtractor-and-Full-subtractor
 ## Implementation-of-Half-subtractor-and-Full-subtractor-circuit
 ## AIM:
 To design a half subtractor and full subtractor circuit and verify its truth table in Quartus using Verilog programming.
@@ -25,30 +25,68 @@ A full subtractor is a combinational circuit that performs subtraction involving
 
 Diff = A ⊕ B ⊕ Bin B = A'Bin + A'B + BBin
 
-## Procedure
+## Procedure:
+### 1.Use module projname(input,output) to start the Verilog programmming. 
+### 2.Assign inputs and outputs using the word input and output respectively. 
+### 3.Use defined keywords like wire,assign and required logic gates to represent the boolean expression. 
+### 4.Use each output to represnt onre for differnce and the other for borrow.
+### 5.End the verilog program using keyword endmodule.
 
 
-
-Write the detailed procedure here 
 
 
 ## Program:
 /*
 Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: HARITHASHREE.V
+RegisterNumber:  212222230046
 */
+```python
+HALF SUBTRACTOR:
+module halfsub(a,b,diff,borrow);
+input a,b;
+output diff,borrow;
+wire x;
+xor(diff,a,b);
+not(x,a);
+and(borrow,x,b);
+endmodule
 
+
+FULL SUBTRACTOR:
+module fullsub(a,b,c,diff,borrow);
+input a,b,c;
+output borrow,diff;
+wire an,q,r,s,t,cn,u;
+not(an,a);
+not(cn,c);
+xor(q,a,b);
+xor(diff,q,c);
+and(s,a,b);
+and(t,q,cn);
+or(borrow,s,t);
+endmodule
+```
 ## Output:
-
-## Truthtable
-
+### full subtractor
+![image](https://user-images.githubusercontent.com/121285701/228262962-79d18b7b-399a-4f4e-bec3-43250dd147a2.png)
+### half subractor
+![image](https://user-images.githubusercontent.com/121285701/228263333-cbd48322-2aff-4f6f-8862-c90020cf53cf.png)
 
 
 ##  RTL realization
+### full subractor:
+![image](https://user-images.githubusercontent.com/121285701/228263489-48f309d6-9b9b-4b6f-abc1-272fed20a299.png)
+### half subractor:
+![image](https://user-images.githubusercontent.com/121285701/228263656-fb8a36b4-00f4-486c-982b-424b699ae21b.png)
+
 
 
 ## Timing diagram 
+### full subractor:
+![image](https://user-images.githubusercontent.com/121285701/228263793-eacfb286-7194-4d97-873d-a2642993fb5b.png)
+### half subractor:
+![image](https://user-images.githubusercontent.com/121285701/228267629-281f12dc-5fb7-4269-b9b0-48d09c12859f.png)
 
 ## Result:
 Thus the half subtractor and full subtractor circuits are designed and the truth tables is verified using quartus software.
