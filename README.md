@@ -38,6 +38,7 @@ Diff = A ⊕ B ⊕ Bin B = A'Bin + A'B + BBin
 ## Program:
 /*
 Developed by: HARITHASHREE.V
+
 RegisterNumber:  212222230046
 */
 ```python
