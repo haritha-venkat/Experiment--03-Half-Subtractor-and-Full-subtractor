@@ -56,15 +56,9 @@ endmodule
 FULL SUBTRACTOR:
 module fullsub(a,b,c,diff,borrow);
 input a,b,c;
-output borrow,diff;
-wire an,q,r,s,t,cn,u;
-not(an,a);
-not(cn,c);
-xor(q,a,b);
-xor(diff,q,c);
-and(s,a,b);
-and(t,q,cn);
-or(borrow,s,t);
+output diff,borrow;
+assign diff=(a^b^c);
+asssign borrow=(~a&(b^c)|(b&c));
 endmodule
 ```
 ## Output:
